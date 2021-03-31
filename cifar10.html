@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Titanic</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/b20e639d02.js" crossorigin="anonymous"></script>
+    <link id="theme-style" rel="stylesheet" href="assets/css/bharat.css">
+    
+
+</head> 
+<body>		
+    <article class="resume-wrapper text-center position-relative">
+	    <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+		  
+			
+		    <div class="resume-body p-5">
+			   
+				
+				
+			    <div class="row">
+				    <div class="col-lg-12">
+					    <section class="resume-section experience-section mb-5">
+						    <a href="blogs.html"><h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3"><-Blogs</h2></a>
+						    <div class="resume-section-content">
+							    <div class="resume-timeline position-relative">
+								    <article class="resume-timeline-item position-relative pb-5">
+									    
+									    <div class="resume-timeline-item-header mb-2">
+										    <div class="d-flex flex-column flex-md-row">
+										        <h3 class="resume-position-title font-weight-bold mb-1">CIFAR10 - CNN</h3>
+										        <div class="resume-company-name ml-auto">Google Colab</div>
+										    </div><!--//row-->
+										    <div class="resume-position-time">March 29, 2021</div>
+									    </div><!--//resume-timeline-item-header-->
+                                        
+									    <div class="resume-timeline-item-desc">
+                                            <br />
+										    <p>The CIFAR-10 dataset (Canadian Institute For Advanced Research) is a collection of images that are commonly used to train machine learning and computer vision algorithms. It is one of the most widely used datasets for machine learning research. The CIFAR-10 dataset contains 60,000 32x32 color images in 10 different classes. The 10 different classes represent airplanes, cars, birds, cats, deer, dogs, frogs, horses, ships, and trucks. There are 6,000 images of each class.</p>
+										    <p>Here the goal is to build CIFAR-10 image classifier and improve the accuracy of 10 classes. </p>
+											<div><img style="width:100% ;" src="assets/images/cifarb.png" alt="tt01"></div>
+										
+
+                                            
+											<p><b>INPUT IMAGE : </b>For input data we are using CIFAR10 dataset.</p>
+											<p><b>CONVOLUTIONAL LAYER : </b>Convolutional layer is our first layer through which input data passes</p>
+											<p>Syntax : Conv2d(Input channel, Output channel, Kernel size) </p>
+											<p>Optionally we can give padding and stride parameters too.</p> 
+											<p>Deep neural networks, more concretely convolutional neural networks (CNN), are basically a stack of layers which are defined by the action of a number of filters on the input. Those filters are usually called kernels.
+
+												For example, the kernels in the convolutional layer, are the convolutional filters. Actually no convolution is performed, but a cross-correlation. The kernel size here refers to the widthxheight of the filter mask.</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/kernel.png" alt="kernel"></div>
+											<p style="text-align: center;">Kernel</p>
+											<p><b>POOLING LAYER : </b>Pooling layer used here is Max pooling layer. The max pooling layer returns the pixel with maximum value from a set of pixels within a mask (kernel).</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/maxpool.png" alt="maxpool"></div>
+											<p style="text-align: center;">Pooling layer</p>
+											</br>
+											<iframe src="cifarcnn.pdf" width="100%" height="550px">
+                                            
+												
+                                            
+                                            </iframe>
+											<h2 style="text-align: center;"><u>My Contribution</u></h2>
+											</br>	
+											<p>Experiment 1</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/v54.png" alt="v54"><img style="width:50% ;" src="assets/images/cifar10ss/bg54.png" alt="bg54"></div>
+											<p style="text-align: center;">Accuracy 54%</p>
+											<p>This is a basic default one where we are using 3 input channel and 16 output channel within two convolutional layers and one pooling layer between the two convolutional layers.
+												Kernel size used is 5x5. Matrix size is 16x5x5.
+												This took almost 2 minutes to run with the accuracy of 54%.
+											</p>
+											</br>	
+											<p>Experiment 2</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/v42.png" alt="v42"><img style="width:50% ;" src="assets/images/cifar10ss/bg42.png" alt="bg42"></div>
+											<p style="text-align: center;">Accuracy 42%</p>
+											<p>Here I've added one more convolutional layers. Here 3 input channel and 16 output channel are used within 3 convolutional layers along with one pooling layer after second convolutional layer.
+												Kernel size used is 3x3. Matrix size is 16x3x3.
+												This took almost 3 and a half minutes to run with the accuracy of 42%.
+												Thus adding an extra convolutional layer with same input and output channel decreases the accuracy.
+											</br>	
+											<p>Experiment 3</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/v58.png" alt="v58"><img style="width:50% ;" src="assets/images/cifar10ss/bg58.png" alt="bg58"></div>
+											<p style="text-align: center;">Accuracy 58%</p>
+											<p>After comparing previous 2 Experiments it is shown that increasing the convolutional layer with same input and output channel has adverse affect on the accuracy of the model, 
+												thus here instead I removed one convolutional layer and increased the output channel to 24 with kernel size of 5x5 and matrix of size 16x5x5.
+												This took almost 2 and a half minutes with the accuracy of 58%.
+											</p>
+											</br>	
+											<p>Experiment 4</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/v65.png" alt="v65"><img style="width:50% ;" src="assets/images/cifar10ss/bg65.png" alt="bg65"></div>
+											<p style="text-align: center;">Accuracy 65%</p>
+											<p>After comparing the above 3 Experiments it is shown that increasing the output layer has increased the accuracy of the model. Thus in this experiment
+												I increased the output channel to 732 with the kernel size of 4x4 and matrix of size 732x5x5.
+												This experiment took almost an hour and finished with the accuracy of 65%
+											</p>
+											</br>
+											<p>Experiment 5</p>
+											<div style="text-align: center;"><img style="width:50% ;" src="assets/images/cifar10ss/v69.png" alt="v69"><img style="width:50% ;" src="assets/images/cifar10ss/bg69.png" alt="bg69"></div>
+											<p style="text-align: center;">Accuracy 69%</p>
+
+											<p>Here in my final experiment I tried adding an extra convolutional layer along with high output channel but instead of putting pooling layer between 2nd and 3rd convolutional layers it is 
+												now between 1st and 2nd convolutional layers with 900 output channel. Kernel size of 4x4 and matrix of size 900x2x2.
+												 This Experiment took almost 3 hours to finish with the accuracy of 69%.
+											</p>
+											</br>
+											<div style="text-align: center;"><img style="width:80% ;" src="assets/images/cifar10ss/bgfinal.png" alt="bgfinal"></div>
+
+
+											
+										  
+											<p>Series 1 Accuracy : 42%</p>
+											<p>Series 2 Accuracy : 54%</p>
+											<p>Series 3 Accuracy : 58%</p>
+											<p>Series 4 Accuracy : 65%</p>
+										    <P>Series 5 Accuracy : 69%</p>
+
+
+<p>References : <a href="https://pytorch.org/tutorials/beginner/blitz/cifar10_tutorial.html#sphx-glr-beginner-blitz-cifar10-tutorial-py">pytorch.org</a> <a href="https://towardsdatascience.com/cifar-10-image-classification-in-tensorflow-5b501f7dc77c">towardsdatascience.com</a> <a href="https://www.cs.toronto.edu/~kriz/cifar.html">cs.toronto.edu</a></p>
+
+                                            <a href="https://github.com/fruktwow/g_colab/blob/main/CNN69.ipynb"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>Git Code</a></br>
+											<a href="https://colab.research.google.com/drive/15x1M2WarSz7gLCXMnlMO6hPhzfF-C4Yz"><span class="fa-container text-center mr-2"><i class="fab fa-google fa-fw"></i></span>Colab Code</a>
+
+										</div><!--//resume-timeline-item-desc-->
+
+									</article><!--//resume-timeline-item-->
+									
+														    								    								    								    
+							    </div><!--//resume-timeline-->
+							    
+							    
+							    
+							    
+							    
+							    
+						    </div>
+					    </section><!--//project-work-section-->
+				    </div>
+				    
+			    </div><!--//row-->
+		    </div><!--//resume-body-->
+		    
+		    
+	    </div>
+    </article>  
+
+    
+    
+    
+    
+
+    
+
+</body>
+</html> 
+
