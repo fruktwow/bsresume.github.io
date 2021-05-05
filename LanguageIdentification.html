@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <title>Language Detection</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="shortcut icon" href="favicon.ico"> 
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/b20e639d02.js" crossorigin="anonymous"></script>
+    <link id="theme-style" rel="stylesheet" href="assets/css/bharat.css">
+    
+
+</head> 
+<body>		
+    <article class="resume-wrapper text-center position-relative">
+	    <div class="resume-wrapper-inner mx-auto text-left bg-white shadow-lg">
+		  
+			
+		    <div class="resume-body p-5">
+			   
+				
+				
+			    <div class="row">
+				    <div class="col-lg-12">
+					    <section class="resume-section experience-section mb-5">
+						    <a href="Projects.html"><h2 class="resume-section-title text-uppercase font-weight-bold pb-3 mb-3"><-Projects</h2></a>
+						    <div class="resume-section-content">
+							    <div class="resume-timeline position-relative">
+								    <article class="resume-timeline-item position-relative pb-5">
+									    
+									    <div class="resume-timeline-item-header mb-2">
+										    <div class="d-flex flex-column flex-md-row">
+										        <h3 class="resume-position-title font-weight-bold mb-1">Language Detection Using TF-IDF</h3>
+										        <div class="resume-company-name ml-auto">Jupyter Notebook</div>
+										    </div><!--//row-->
+										    <div class="resume-position-time">May 4, 2021</div>
+									    </div><!--//resume-timeline-item-header-->
+                                        
+									    <div class="resume-timeline-item-desc">
+                                            <br />
+                                            <h3 style="text-align: center;text-decoration: underline;">Applciation</h3></br>
+
+                                            <a href="https://languagedetectiontfidf.herokuapp.com/">Language Identification</a></br>
+
+                                            <h3 style="text-align: center;text-decoration: underline;">Proposal</h3></br>
+
+                                            <a href="https://drive.google.com/file/d/1nhMacw3v9778tDiBf7txM3Ixu81dJn6X/view?usp=sharing">Proposal Doc</a></br>
+
+
+                                            <h3 style="text-align: center;text-decoration: underline;">Introduction</h3></br>
+
+										    <p>Language detection is a process of determining which natural language given content is in. Here we will explore a classification method know as k-nearest neighbors(KNN), to determine what language a given text input is in. The dataset that will be used consists of historical Twitter Tweets across 7 different languages. Those languages are Chinese, English, French, Spanish, German, Hindi, and Japanese. For each language, a total of 1,000 sample Tweets were collected. This resulted in a total dataset of 7,000 records. Of those 7,000 records, 70% of those went into our training dataset, and the other 30% into the testing dataset. Using the Python programming language and supporting statistical libraries, TF-IDF was used to extract the feature vectors before being passed into KNN Classifier. </p>
+                                            <div><img style="width:100% ;" src="assets/images/languages.png" alt="language"></div>
+                                            <p>In attempting to identify the language of text, one could apply language specific knowledge, and aim to make a prediction based on what is known. For example, say you are reading a document that contains the word “y’all”. This is an English term that originated in the southern part of the United States and still has strong usage in the region. By applying this language specific knowledge to a Language Identification model, one could infer that a document that contains this term is of the English language.  Another approach would be to explore statistical methods. By applying what is known as an n-gram, one can build a model that facilitates Language Identification. N-gram works by taking a set of text and tokenizing the contents and removing unnecessary characters such as numerical values and sentence punctuation. Iterating over the tokens that were read in, you create n-grams. The following example will demonstrate how n-grams are constructed based on an input sentence. </p>
+
+                                                <pre>
+
+Ex. “I like pizza.” 
+                                                
+Unigram (1-gram) -> “I”, “like”, “pizza” 
+                                                
+Bigram (2-gram) -> “I like”, “like pizza” 
+
+Trigram (3-gram) -> “I like pizza”  </pre>
+        <p>
+                                                
+        As seen in the example, the procedure of n-gram works by pairing all combinations of adjacent words within the sentence. N-grams can also be applied at the character level to deconstruct a word.  
+    </p>    
+    <pre>
+                                   
+Ex. “Pizza” 
+                                                
+Unigram (1-gram) -> “P”, “i”, “z”, “z”, “a” 
+                                                
+Bigram (2-gram) -> “Pi”, “iz”, “zz”, “za” 
+                                            </pre>     <p>             
+                                                Once the language model has been developed after running the n-gram technique, you run a comparison to see how closely related your input is to the model.  
+                                            </p>
+                                            <h3 style="text-align: center;text-decoration: underline;">Proposed Method</h3><br>
+                                            <p>
+                                                First step is to collect the data from Twitter using Snscrape module. In the second step the collected data is preprocessed by removing the unwanted data such as hashtags, emoticons, http links etc. In the next step the preprocessed data is given as an input to the feature extraction technique which is TF-IDF to convert the text data into a vector of features. These feature vectors are given as an input to KNN Classifier.
+                                                </p>
+
+                                                <br>
+											<div><img style="width:100% ;" src="assets/images/process.png" alt="Process"></div>
+                                            </br>
+<h3 style="text-align: center;text-decoration: underline;">Data Preprocessing</h3></br>
+<p>
+
+    In the data preprocessing step, we have converted the whole text into lowercase and then removed the digits/ numbers in all the languages and removed the English letter characters from Hindi, Japanese and Chinese language. 
+    
+    Also, we have removed the emoticons, hashtags, special symbols, and http links using regular expressions. After Preprocessing this data, it is split into training and testing data and is then given as an input to feature extraction method. </p>
+<div><img style="width:50%;display: block;margin-left:auto;margin-right: auto; ;" src="assets/images/beforepre.png" alt="beforepre" ></div>
+<h4 style="text-align: center;">Before</h4>
+    <div><img style="width:50% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/afterpre.png" alt="afterpre"></div>
+    <br><h4 style="text-align: center;">After</h4>
+<br>
+    <h3 style="text-align: center;text-decoration: underline;">Feature Extraction</h3>
+    <p>When working on language processing the main issue with the machine learning models is that they do not work directly on the raw text. The text needs to be converted into matrix/vector of features. So, the preprocessed data is given as an input to the TF-IDF which is a frequency-based feature extraction method divided into 2 subparts, TF (Term Frequency) and IDF (Inverse Document Frequency). TF- IDF creates vectors from text which contains information on the more important words and the less importance once as well. The Term Frequency (TF) works by measuring how often a word occurs in a document. This tells us that the word which occurs frequently is probably important to that document. While Inverse Document Frequency (IDF) works by measuring how often a word occurs in the entire corpus and tells us about the common words like “a”, “and” “the”, “an”, “for” etc. Considering  n as number of times the term t appears in a document, the Term Frequency is calculated as shown below. </p>
+
+
+
+<br>
+    <div><img style="width:20% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/tf1.png" alt="tf1"></div><br>
+   <p>As TF alone is not sufficient, we also calculate IDF value to understand the importance of a word. The IDF value is calculated as shown below. </p>
+    <br><div><img style="width:20% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/tf2.png" alt="tf2"></div><br>
+
+    <p>The n-gram range in the TF–IDF was given as (1,3) which means along with unigrams we are also considering bi-grams and trigrams to make the model clear in understanding the difference between the languages. Below is the figure of sample features extracted using TF-IDF. </p>
+
+    <div><img style="width:15% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/tf3.png" alt="tf3"></div>
+    <br><h6 style="text-align: center;">Features obtained from TF-IDF</h6>
+
+
+<br>
+    <h3 style="text-align: center;text-decoration: underline;">Classification</h3></br>
+    <div><img style="width:70% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/knn1.png" alt="knn1"></div><br>
+
+    <p>The feature vectors obtained from TF-IDF were given as input KNN machine learning. KNN works by finding the distances between a query and all the examples in the data, selecting the specified number examples (K) closest to the query, then votes for the most frequent label</p>
+
+    <br><div><img style="width:70% ;display: block;margin-left:auto;margin-right: auto;" src="assets/images/crosstab.png" alt="crosstab"></div><br>
+
+    <br><h6 style="text-align: center;">Cross tabulation result of KNN</h6>
+
+<br>
+    <h3 style="text-align: center;text-decoration: underline;">Result</h3></br>
+    <p>The accuracy result calculated was 98.1%. The cross-tabulation result shows that KNN  has correctly predicted 304 English language tweets as English and wrongly predicted 4 tweets of English as French, 9 tweets of English as German. </p>
+
+
+
+    <iframe src="LDPdf.pdf" width="100%" height="550px">
+                                            
+                                            
+                                            
+    </iframe>
+                                      
+											
+											<h2 style="text-align: center;"><u>My Contribution</u></h2>
+											
+                                            <p>1.Fetching Data from Twitter and Preprocessing It</p>
+                                            <p>2.Converting data into Vector form</p>
+                                            <p>3.Saving model using pickle library</p>
+                                            <p>4.Built Gui and hosted using flask</p>
+                                            <p>5.Deployed the applciation using Heroku </p>
+
+
+											</br>
+											
+				    <P><b>Challenge</b> : First I was fetching data from twitter using twitter developer account but the issue was twitter allows only limited data. I resolved this issue by searching and doing some research on module knows as snscrape. As it was my first time creating a model using pickle and linking it with gui i was facing several issues, Later after going through several tutorials I was able to link the model with gui</p>
+
+
+
+                        
+
+
+				    <p>References : <a href="https://towardsdatascience.com/text-summarization-using-tf-idf-e64a0644ace3">https://towardsdatascience.com/text-summarization-using-tf-idf-e64a0644ace3</a> </p> <p><a href="https://towardsdatascience.com/nlp-in-python-vectorizing-a2b4fc1a339e">https://towardsdatascience.com/nlp-in-python-vectorizing-a2b4fc1a339e</a></p> <p><a href="https://en.wikipedia.org/wiki/Natural_language">https://en.wikipedia.org/wiki/Natural_language</a></p>
+				    
+                    
+                    
+                    
+
+				    <p><a href=“https://machinelearningmastery.com/overfitting-machine-learning-models/”>hhttps://machinelearningmastery.com/overfitting-machine-learning-models/</a></p>
+
+
+<p><a href=“https://en.wikipedia.org/wiki/Natural_language#Defining_natural_language”>https://en.wikipedia.org/wiki/Natural_language#Defining_natural_language
+</a></p>
+
+
+<p><a href=“https://en.wikipedia.org/wiki/Natural_language_processing“>https://en.wikipedia.org/wiki/Natural_language_processing</a></p>
+
+<p><a href=“https://medium.com/@sonish.sivarajkumar/k-nearest-neighbours-knn-algorithm-9900c1427726“>https://medium.com/@sonish.sivarajkumar/k-nearest-neighbours-knn-algorithm-9900c1427726</a></p>
+
+<p><a href=“http://www.oneworld365.org/blog/how-to-say-hello-in-different-languages“>http://www.oneworld365.org/blog/how-to-say-hello-in-different-languages</a></p>
+
+
+                                            <a href="https://github.com/fruktwow/Language_Detection_TFIDF/blob/main/LDTFIDF.ipynb"><span class="fa-container text-center mr-2"><i class="fab fa-github-alt fa-fw"></i></span>Git Code</a></br>
+											<a href="https://colab.research.google.com/drive/1Mkz0UgXB8-ty5Tx0XgV5mQvOxc1F-OMv"><span class="fa-container text-center mr-2"><i class="fab fa-google fa-fw"></i></span>Colab Code</a><br>
+                                            <a href="https://www.kaggle.com/bsekso8/tfidf"><span class="fa-container text-center mr-2"><i class="fab fa-kaggle"></i></span>Kaggle Code</a>
+
+
+										</div><!--//resume-timeline-item-desc-->
+
+									</article><!--//resume-timeline-item-->
+									
+														    								    								    								    
+							    </div><!--//resume-timeline-->
+							    
+							    
+							    
+							    
+							    
+							    
+						    </div>
+					    </section><!--//project-work-section-->
+				    </div>
+				    
+			    </div><!--//row-->
+		    </div><!--//resume-body-->
+		    
+		    
+	    </div>
+    </article>  
+
+    
+    
+    
+    
+
+    
+
+</body>
+</html> 
+
